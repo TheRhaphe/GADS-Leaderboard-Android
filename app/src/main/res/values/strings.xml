@@ -10,4 +10,6 @@
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="project_submission">Project Submission</string>
+    <string name="submission_successful">Submission Successful</string>
+    <string name="submission_not_successful">Submission not successful</string>
 </resources>
