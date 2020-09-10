@@ -25,8 +25,14 @@ public class ConfirmDialog extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_confirm, container, false);
-        view.findViewById(R.id.cancel).setOnClickListener(v->onResult.onResult(false));
-        view.findViewById(R.id.confirm).setOnClickListener(v->onResult.onResult(true));
+        view.findViewById(R.id.cancel).setOnClickListener(v->{
+            dismiss();
+            onResult.onResult(false);
+        });
+        view.findViewById(R.id.confirm).setOnClickListener(v->{
+            dismiss();
+            onResult.onResult(true);
+        });
         return view;
     }
 

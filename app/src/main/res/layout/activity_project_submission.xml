@@ -115,7 +115,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:indeterminate="true"
-        android:indeterminateTint="#000"
+        android:indeterminateTint="#fff"
         app:layout_constraintBottom_toBottomOf="@+id/buttonSubmit"
         app:layout_constraintEnd_toEndOf="@+id/buttonSubmit"
         app:layout_constraintStart_toStartOf="@+id/buttonSubmit"

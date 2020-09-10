@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -69,7 +70,8 @@ public class ProjectSubmissionActivity extends AppCompatActivity implements Conf
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 progressBar.setVisibility(View.GONE);
-                showSuccessDialog();
+                if (response.isSuccessful()) showSuccessDialog();
+                else showFailureDialog();
             }
 
             @Override
@@ -89,6 +91,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity implements Conf
     private void showFailureDialog() {
         new MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_rounded)
                 .setView(R.layout.dialog_failure)
+                .setOnDismissListener(dialog -> showViews())
                 .show();
     }
 
