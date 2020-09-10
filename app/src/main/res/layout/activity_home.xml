@@ -29,6 +29,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
+                android:id="@+id/submitButton"
                 android:layout_marginRight="16dp"
                 android:background="@drawable/rounded_white_button"
                 android:text="Submit"

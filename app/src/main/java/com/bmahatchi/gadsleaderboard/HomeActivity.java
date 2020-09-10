@@ -1,19 +1,13 @@
 package com.bmahatchi.gadsleaderboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import androidx.viewpager.widget.ViewPager;
 
 import com.bmahatchi.gadsleaderboard.ui.main.SectionsPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -26,5 +20,6 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+        findViewById(R.id.submitButton).setOnClickListener(v->startActivity(new Intent(getApplicationContext(), ProjectSubmissionActivity.class)));
     }
 }
