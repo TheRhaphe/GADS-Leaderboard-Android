@@ -85,6 +85,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity implements Conf
     private void showSuccessDialog() {
         new MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_rounded)
                 .setView(R.layout.dialog_success)
+                .setOnDismissListener(dialog -> finish())
                 .show();
     }
 
