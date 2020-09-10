@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class LearnerListFragment extends Fragment {
     private List<Learner> learnerList = new ArrayList<>();
     public RecyclerAdapter recyclerAdapter;
     public RecyclerView recyclerView;
+    private ProgressBar loadingProgressBar;
 
     public static LearnerListFragment newInstance(int index) {
         LearnerListFragment fragment = new LearnerListFragment();
@@ -55,6 +57,7 @@ public class LearnerListFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        loadingProgressBar = root.findViewById(R.id.loadingProgressBar);
         recyclerView = root.findViewById(R.id.recyclerView);
         recyclerAdapter = new RecyclerAdapter(learnerList, index==0);
         recyclerView.setAdapter(recyclerAdapter);
@@ -78,6 +81,7 @@ public class LearnerListFragment extends Fragment {
             public void onResponse(@NonNull Call<List<Learner>> call, @NonNull Response<List<Learner>> response) {
                 learnerList = response.body();
                 recyclerView.setAdapter(new RecyclerAdapter(learnerList, index==0));
+                loadingProgressBar.setVisibility(View.GONE);
             }
 
             @Override
