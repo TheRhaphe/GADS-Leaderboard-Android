@@ -4,4 +4,10 @@
     <string name="tab_text_1">Leading Learners</string>
     <string name="tab_text_2">Skill IQ Leaders</string>
     <string name="leader_board_caps">LEADERBOARD</string>
+    <string name="submit">Submit</string>
+    <string name="project_on_github_link">Project on GITHUB (link)</string>
+    <string name="email_address">Email Address</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="project_submission">Project Submission</string>
 </resources>
