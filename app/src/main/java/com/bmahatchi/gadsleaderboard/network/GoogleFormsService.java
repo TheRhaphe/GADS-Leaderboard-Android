@@ -1,4 +1,4 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.network;
 
 import retrofit2.Call;
 import retrofit2.http.Field;

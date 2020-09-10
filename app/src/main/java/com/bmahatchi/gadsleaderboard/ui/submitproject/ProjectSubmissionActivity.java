@@ -1,16 +1,17 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.ui.submitproject;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import com.bmahatchi.gadsleaderboard.R;
+import com.bmahatchi.gadsleaderboard.network.GoogleFormsService;
+import com.bmahatchi.gadsleaderboard.ui.submitproject.ConfirmDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import retrofit2.Call;
@@ -20,7 +21,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProjectSubmissionActivity extends AppCompatActivity implements ConfirmDialog.OnResult {
-
     public EditText email;
     public EditText firstName;
     public EditText lastName;

@@ -1,10 +1,13 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.ui.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
+import com.bmahatchi.gadsleaderboard.R;
+import com.bmahatchi.gadsleaderboard.ui.home.HomeActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

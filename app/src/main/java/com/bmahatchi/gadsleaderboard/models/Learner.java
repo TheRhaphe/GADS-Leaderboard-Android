@@ -1,4 +1,4 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.models;
 
 public class Learner {
     private String name;

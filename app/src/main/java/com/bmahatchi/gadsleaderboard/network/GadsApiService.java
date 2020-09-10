@@ -1,10 +1,11 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.network;
+
+import com.bmahatchi.gadsleaderboard.models.Learner;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Header;
 import retrofit2.http.Headers;
 
 public interface GadsApiService {

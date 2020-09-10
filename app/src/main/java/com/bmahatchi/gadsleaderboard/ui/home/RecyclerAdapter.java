@@ -1,16 +1,15 @@
-package com.bmahatchi.gadsleaderboard.ui.main;
+package com.bmahatchi.gadsleaderboard.ui.home;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bmahatchi.gadsleaderboard.Learner;
+import com.bmahatchi.gadsleaderboard.models.Learner;
 import com.bmahatchi.gadsleaderboard.R;
 import com.squareup.picasso.Picasso;
 
@@ -30,7 +29,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.learner_view, parent, false);
-        //view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 120));
         return new ViewHolder(view);
     }
 

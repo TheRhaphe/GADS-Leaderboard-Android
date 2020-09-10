@@ -1,4 +1,4 @@
-package com.bmahatchi.gadsleaderboard.ui.main;
+package com.bmahatchi.gadsleaderboard.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bmahatchi.gadsleaderboard.GadsApiService;
-import com.bmahatchi.gadsleaderboard.Learner;
+import com.bmahatchi.gadsleaderboard.network.GadsApiService;
+import com.bmahatchi.gadsleaderboard.models.Learner;
 import com.bmahatchi.gadsleaderboard.R;
 
 import java.util.ArrayList;
@@ -29,13 +29,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class LearnerListFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
-    public int index;
+    private int index;
     private List<Learner> learnerList = new ArrayList<>();
-    public RecyclerAdapter recyclerAdapter;
-    public RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private ProgressBar loadingProgressBar;
 
-    public static LearnerListFragment newInstance(int index) {
+    static LearnerListFragment newInstance(int index) {
         LearnerListFragment fragment = new LearnerListFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
@@ -59,7 +58,7 @@ public class LearnerListFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         loadingProgressBar = root.findViewById(R.id.loadingProgressBar);
         recyclerView = root.findViewById(R.id.recyclerView);
-        recyclerAdapter = new RecyclerAdapter(learnerList, index==0);
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(learnerList, index == 0);
         recyclerView.setAdapter(recyclerAdapter);
         setup();
         return root;

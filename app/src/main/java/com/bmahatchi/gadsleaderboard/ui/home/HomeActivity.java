@@ -1,4 +1,4 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.bmahatchi.gadsleaderboard.ui.main.SectionsPagerAdapter;
+import com.bmahatchi.gadsleaderboard.ui.submitproject.ProjectSubmissionActivity;
+import com.bmahatchi.gadsleaderboard.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {

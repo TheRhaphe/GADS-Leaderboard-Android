@@ -1,4 +1,4 @@
-package com.bmahatchi.gadsleaderboard;
+package com.bmahatchi.gadsleaderboard.ui.submitproject;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+
+import com.bmahatchi.gadsleaderboard.R;
 
 public class ConfirmDialog extends DialogFragment {
     private final String TAG = getClass().getSimpleName();
