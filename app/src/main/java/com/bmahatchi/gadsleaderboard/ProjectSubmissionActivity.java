@@ -18,7 +18,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ProjectSubmissionActivity extends AppCompatActivity {
+public class ProjectSubmissionActivity extends AppCompatActivity implements ConfirmDialog.OnResult {
 
     public EditText email;
     public EditText firstName;
@@ -44,19 +44,20 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
         submit = findViewById(R.id.buttonSubmit);
-        submit.setOnClickListener(v->submit(
-                email.getText().toString(), firstName.getText().toString(), lastName.getText().toString(),
-                link.getText().toString()
-        ));
+        submit.setOnClickListener(v->{
+            hideViews();
+            new ConfirmDialog().show(getSupportFragmentManager(), null);
+        });
+    }
+
+    @Override
+    public void onResult(boolean shouldSubmit) {
+        if (shouldSubmit) submit(email.getText().toString(), firstName.getText().toString(), lastName.getText().toString(),
+                link.getText().toString());
+        else showViews();
     }
 
     private void submit(String email, String firstName, String lastName, String link) {
-        if (true){
-            hideViews();
-            showFailureDialog();
-            return;
-        }
-        hideViews();
         progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://docs.google.com/forms/d/e/")
@@ -78,6 +79,7 @@ public class ProjectSubmissionActivity extends AppCompatActivity {
             }
         });
     }
+
     private void showSuccessDialog() {
         new MaterialAlertDialogBuilder(this, R.style.MaterialAlertDialog_rounded)
                 .setView(R.layout.dialog_success)
