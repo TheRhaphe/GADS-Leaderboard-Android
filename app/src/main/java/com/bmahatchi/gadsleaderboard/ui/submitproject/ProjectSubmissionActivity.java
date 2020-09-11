@@ -21,12 +21,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProjectSubmissionActivity extends AppCompatActivity implements ConfirmDialog.OnResult {
-    public EditText email;
-    public EditText firstName;
-    public EditText lastName;
-    public EditText link;
-    public Button submit;
-    public ProgressBar progressBar;
+    private EditText email;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText link;
+    private Button submit;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
